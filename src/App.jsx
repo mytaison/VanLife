@@ -14,6 +14,7 @@ import HostVanDetail from "./pages/Hosts/Vans/HostVanDetail.jsx";
 import HostVanPhotos from "./pages/Hosts/Vans/HostVanPhotos.jsx";
 import HostVanPricing from "./pages/Hosts/Vans/HostVanPricing.jsx";
 import HostVanInfo from "./pages/Hosts/Vans/HostVanInfo.jsx";
+import NotFound404 from "./pages/404NotFound.jsx";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="photos" element={<HostVanPhotos />} />
             </Route>
           </Route>
+          <Route path="*" element={<NotFound404 />} />
         </Route>
       </Routes>
     </>
