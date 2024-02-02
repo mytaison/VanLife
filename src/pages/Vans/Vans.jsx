@@ -1,20 +1,22 @@
-import { useState, useEffect } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+// import { useState, useEffect } from "react";
+import { Link, useSearchParams, useLoaderData } from "react-router-dom";
+import { getVans } from "../../api";
+
+export function loader() {
+  // throw new Error("failed to get data!");
+  return getVans();
+}
 
 export default function Vans() {
-  const [vans, setVans] = useState([]);
+  // const [vans, setVans] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
-  console.log(typeFilter);
+  const vans = useLoaderData();
+  console.log(vans);
+
   const displayVans = typeFilter
     ? vans.filter((van) => van.type.toLowerCase() === typeFilter)
     : vans;
-
-  useEffect(() => {
-    fetch("/api/vans")
-      .then((response) => response.json())
-      .then((data) => setVans(data.vans));
-  }, []);
 
   const vanElements = displayVans.map((van) => (
     <div key={van.id} className="van-tile">
