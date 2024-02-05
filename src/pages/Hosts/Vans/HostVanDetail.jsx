@@ -1,5 +1,11 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useEffect, useState } from "react";
 import { useParams, Link, NavLink, Outlet } from "react-router-dom";
+import { getHostVans } from "../../../api";
+
+export function loader({ params }) {
+  return getHostVans(params.id);
+}
 
 export default function HostVanDetail() {
   const { id } = useParams();

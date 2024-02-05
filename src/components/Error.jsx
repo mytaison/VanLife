@@ -1,4 +1,5 @@
-import { Link, useRouteError } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+import { Link, Navigate, redirect, useRouteError } from "react-router-dom";
 
 export default function Error() {
   const styles = { textAlign: "center" };
@@ -14,7 +15,15 @@ export default function Error() {
         </pre>
       </>
     );
-  } else errorEl = <h1>Error Occured!</h1>;
+  }
+  // if redirect()'s return object's body is false
+  //   else if (error.status === 302 && error.headers.map.location) {
+  //     return <Navigate to={error.headers.map.location}></Navigate>;
+  //   }
+  else {
+    console.log(error);
+    errorEl = <h1>Error Occured!</h1>;
+  }
   return (
     <>
       <header>
