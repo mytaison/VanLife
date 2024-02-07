@@ -1,8 +1,7 @@
-# React + Vite
+# VanLife
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## React Router 6 Practice Project
 
-Currently, two official plugins are available:
+This project is built using Vite, React & React Router 6. Explored common features of React Router and newly added Data Layer API of v6
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+For API mocking, mirageJS has been used but while practicing it is found that MirageJS creating lots of issues with Router v6.4++
